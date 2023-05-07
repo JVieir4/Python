@@ -11,7 +11,20 @@ função a todos os sufixos da sequência de entrada.
 """
 
 def crescente(lista):
-    return -1
+    n = len(lista)
+    if n == 0:
+        return 0
+    dic = {n-1:1}
+    i = n-2
+    while i>=0:
+        dic[i] = 1
+        mx = 0
+        for j in range(i+1, n):
+            if (lista[i]<=lista[j] and dic[j]>mx):
+                mx = dic[j]
+        dic[i] += mx
+        i-=1
+    return max(dic.values())
 
 def main():
     print("<h3>crescente</h3>")
