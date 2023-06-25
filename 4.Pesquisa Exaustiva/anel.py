@@ -5,7 +5,6 @@ até n em que a soma de quaisquer dois números adjacentes é um número primo
 Implemente uma função que calcule um destes aneis de tamanho n.
 '''
 
-
 def isPrime(n):
     for i in range(2, int(n/2)):
         if n%i==0:
